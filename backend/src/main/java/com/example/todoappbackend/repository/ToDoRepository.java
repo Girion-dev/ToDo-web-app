@@ -1,4 +1,7 @@
 package com.example.todoappbackend.repository;
 
-public interface ToDoRepository {
-}
+import com.example.todoappbackend.data.ToDo;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface ToDoRepository extends MongoRepository<ToDo, String> {}
+
