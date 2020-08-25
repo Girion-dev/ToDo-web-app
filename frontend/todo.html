@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="todo-container">
         <h1 class="title">To Do List</h1>
-        <div class="to-do-container">
+        <div class="input-container">
             <div class="create-container">
                 <label>
                     <input type="text">
@@ -18,7 +18,14 @@
                     Add
                 </button>
             </div>
-            <div class="to-do-list-container">
+            <div class="todo-list-container">
+                <div class="todo-item" :class="{ completed: todo.completed }">
+                    <span>{{ todo.title }}</span>
+                    <div class="controls">
+                        <span @click="deleteItem">🗑</span>
+                        <span @click="completeItem">✓</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
